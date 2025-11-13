@@ -36,8 +36,53 @@ window.onclick = function(event) {
 .modal-dev-table th, .modal-dev-table td, .modal-qa-table th, .modal-qa-table td {padding:6.5px 9px;border-bottom:1px solid #35354f99;}
 .modal-dev-table th, .modal-qa-table th {color:#ffe88e;background:#22242aee;text-align:left;}
 .modal-dev-secao-tit, .modal-qa-secao-tit {color:#44bafa;font-size:1.15em;margin:20px 0 9px 0;}
-</style>
-<style>
+
+/* Ajustes para primeiro quadro para evitar scroll */
+.quadro-metricas {
+    display: flex;
+    flex-wrap: nowrap;        /* Não quebra os cards */
+    justify-content: center;  /* Centraliza */
+    gap: 32px;
+    max-width: unset;         /* Remove limite se quiser ocupar a tela toda */
+    overflow-x: auto;         /* Permite barra caso realmente extrapole */
+}
+.painel {
+    width: 320px;      /* Largura fixa para todos os cards */
+    min-width: 280px;  /* Segurança, mas o width já segura */
+    max-width: 340px;
+}
+
+@media (max-width: 1600px) {
+    .quadro-metricas {
+        max-width: 1350px;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .quadro-metricas {
+        max-width: 900px;
+        gap: 16px;
+    }
+    .painel {
+        max-width: 97vw;
+        min-width: 170px;
+    }
+}
+
+@media (max-width: 700px) {
+    .quadro-metricas {
+        flex-direction: column;
+        max-width: 99vw;
+        gap: 12px;
+    }
+    .painel {
+        max-width: 99vw;
+        min-width: 120px;
+    }
+}
+
+
 body {
   background: #23252c;
   color: #e0e3e8;
@@ -56,11 +101,12 @@ h2 {
 .cards-painel {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: center;
   gap: 34px;
   padding: 24px 24px 0 24px;
 }
 .card-metrica {
+      font-size: 0.97em;
   background: linear-gradient(135deg,#272b32 93%,#23252c 100%);
   border-radius: 18px;
   box-shadow: 0 4px 30px 0 #0009;
@@ -179,45 +225,50 @@ a {
 a:hover {
     color: #fff !important;
 }
+.cards-painel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    justify-content: center; /* Mantém os cards centralizados */
+    width: 100%;
+}
 </style>
 
 <h2>Métricas do Time Web<br>(Outubro 2025)</h2>
-<div class="cards-painel">
-  <div class="card-metrica" style="width: 100%; display: flex; flex-direction: row; gap: 22px; justify-content: space-between; flex-wrap: wrap; min-height:unset;">
-    <div style="flex:1; min-width:220px; padding:10px;">
-      <div class="card-header">Cards Entregues</div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">91</span></div>
-        <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">38</span></div>
-      </div>
+<div class="quadro-metricas">
+  <div class="painel">
+    <div class="card-header">Cards Entregues</div>
+    <div class="card-info-itens">
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">91</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">38</span></div>
     </div>
-    <div style="flex:1; min-width:220px; padding:10px;">
-      <div class="card-header">Média de Entrega</div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 3h 45m</span></div>
-        <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 11h 29m</span></div>
-      </div>
+  </div>
+  <div class="painel">
+    <div class="card-header">Média de Entrega</div>
+    <div class="card-info-itens">
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 3h 45m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 11h 29m</span></div>
     </div>
-    <div style="flex:1; min-width:220px; padding:10px;">
-      <div class="card-header">T.Col Retorno</div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 5h 42m</span></div>
-        <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 3h 39m</span></div>
-      </div>
+  </div>
+  <div class="painel">
+    <div class="card-header">T.Col Retorno</div>
+    <div class="card-info-itens">
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 5h 42m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 3h 39m</span></div>
     </div>
-    <div style="flex:1; min-width:220px; padding:10px;">
-      <div class="card-header">T.Col Pronto p/ Testar</div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 11h 60m</span></div>
-        <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 12h 20m</span></div>
-      </div>
+  </div>
+  <div class="painel">
+    <div class="card-header">T.Col Pronto p/ Testar</div>
+    <div class="card-info-itens">
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 11h 60m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 12h 20m</span></div>
     </div>
-    <div style="flex:1; min-width:220px; padding:10px;">
-      <div class="card-header">Retornos de Review</div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">56.0% (91 cards)</span></div>
-        <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">18.4% (38 cards)</span></div>
-      </div>
+  </div>
+  <div class="painel">
+    <div class="card-header">Retornos de Review</div>
+    <div class="card-info-itens">
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">56.0% (91 cards)</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">18.4% (38 cards)</span></div>
     </div>
   </div>
 </div>
