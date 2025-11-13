@@ -106,7 +106,7 @@ h2 {
   padding: 24px 24px 0 24px;
 }
 .card-metrica {
-      font-size: 0.97em;
+    font-size: 0.97em;
   background: linear-gradient(135deg,#272b32 93%,#23252c 100%);
   border-radius: 18px;
   box-shadow: 0 4px 30px 0 #0009;
@@ -231,6 +231,24 @@ a:hover {
     gap: 34px;
     justify-content: center; /* Mantém os cards centralizados */
     width: 100%;
+}
+
+@media (max-width: 700px) {
+  .quadro-metricas {
+    flex-wrap: wrap !important;      /* pode forçar com !important caso o navegador ignore */
+    justify-content: center;         /* centraliza as linhas dobradas */
+    gap: 10px;
+  }
+  .painel {
+    flex: 1 1 96vw !important;       /* deixa cada card ocupar quase toda a largura do mobile */
+    width: 96vw !important;
+    max-width: 99vw !important;
+    min-width: 0 !important;
+  }
+  .card-metrica {
+    font-size: 0.93em;               /* deixa mais compacto no mobile */
+    padding: 5px 2vw;
+  }
 }
 </style>
 
