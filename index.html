@@ -38,49 +38,54 @@ window.onclick = function(event) {
 .modal-dev-secao-tit, .modal-qa-secao-tit {color:#44bafa;font-size:1.15em;margin:20px 0 9px 0;}
 
 /* Ajustes para primeiro quadro para evitar scroll */
+.quadro-wrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
 .quadro-metricas {
-    display: flex;
-    flex-wrap: nowrap;        /* Não quebra os cards */
-    justify-content: center;  /* Centraliza */
-    gap: 32px;
-    max-width: unset;         /* Remove limite se quiser ocupar a tela toda */
-    overflow-x: auto;         /* Permite barra caso realmente extrapole */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
 .painel {
-    width: 320px;      /* Largura fixa para todos os cards */
-    min-width: 280px;  /* Segurança, mas o width já segura */
-    max-width: 340px;
+    width: fit-content;      /* Largura fixa para todos os cards */
+    height: fit-content;
+    padding: 1rem;
+    margin: 0 0.5rem;
 }
 
-@media (max-width: 1600px) {
-    .quadro-metricas {
-        max-width: 1350px;
-        gap: 24px;
-    }
-}
+# @media (max-width: 1600px) {
+#     .quadro-metricas {
+#         max-width: 1350px;
+#         gap: 24px;
+#     }
+# }
 
-@media (max-width: 1100px) {
-    .quadro-metricas {
-        max-width: 900px;
-        gap: 16px;
-    }
-    .painel {
-        max-width: 97vw;
-        min-width: 170px;
-    }
-}
+# @media (max-width: 1100px) {
+#     .quadro-metricas {
+#         max-width: 900px;
+#         gap: 16px;
+#     }
+#     .painel {
+#         max-width: 97vw;
+#         min-width: 170px;
+#     }
+# }
 
-@media (max-width: 700px) {
-    .quadro-metricas {
-        flex-direction: column;
-        max-width: 99vw;
-        gap: 12px;
-    }
-    .painel {
-        max-width: 99vw;
-        min-width: 120px;
-    }
-}
+# @media (max-width: 700px) {
+#     .quadro-metricas {
+#         flex-direction: column;
+#         max-width: 99vw;
+#         gap: 12px;
+#     }
+#     .painel {
+#         max-width: 99vw;
+#         min-width: 120px;
+#     }
+# }
 
 
 body {
@@ -88,6 +93,10 @@ body {
   color: #e0e3e8;
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0; min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  transition: 100ms all ease-in;
+  overflow-x: hidden;
 }
 h2 {
   font-family: 'Fira Mono', monospace;
@@ -233,26 +242,28 @@ a:hover {
     width: 100%;
 }
 
-@media (max-width: 700px) {
-  .quadro-metricas {
-    flex-wrap: wrap !important;      /* pode forçar com !important caso o navegador ignore */
-    justify-content: center;         /* centraliza as linhas dobradas */
-    gap: 10px;
-  }
-  .painel {
-    flex: 1 1 96vw !important;       /* deixa cada card ocupar quase toda a largura do mobile */
-    width: 96vw !important;
-    max-width: 99vw !important;
-    min-width: 0 !important;
-  }
-  .card-metrica {
-    font-size: 0.93em;               /* deixa mais compacto no mobile */
-    padding: 5px 2vw;
-  }
-}
+# @media (max-width: 700px) {
+#   .quadro-metricas {
+#     flex-wrap: wrap !important;      /* pode forçar com !important caso o navegador ignore */
+#     justify-content: center;         /* centraliza as linhas dobradas */
+#     gap: 10px;
+#   }
+#   .painel {
+#     flex: 1 1 96vw !important;       /* deixa cada card ocupar quase toda a largura do mobile */
+#     width: 96vw !important;
+#     max-width: 99vw !important;
+#     min-width: 0 !important;
+#   }
+#   .card-metrica {
+#     font-size: 0.93em;               /* deixa mais compacto no mobile */
+#     padding: 5px 2vw;
+#   }
+# }
 </style>
 
-<h2>Métricas do Time Web<br>(Novembro 2025)</h2>
+<h2 style="text-align: center;">Métricas do Time Web<br>(Novembro 2025)</h2>
+
+<div class="quadro-wrapper">
 <div class="quadro-metricas">
   <div class="painel">
     <div class="card-header">Cards Entregues</div>
@@ -301,8 +312,9 @@ a:hover {
     </div>
   </div>
 </div>
+</div>
 
-<h2>Relatório de Métricas dos Devs</h2>
+<h2 style="text-align: center;">Relatório de Métricas dos Devs</h2>
 <div class="cards-painel">
 
     <div class="card-metrica" onclick="abrirModalDev('0')">
@@ -746,7 +758,7 @@ a:hover {
         <span class="modal-close" onclick="fecharModalDev('10')">&times;</span>
         <h2>Métricas: Kaue Thums</h2>
     <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div></div>
-<h2>Relatório de Métricas dos QAs</h2>
+<h2 style="text-align: center;">Relatório de Métricas dos QAs</h2>
 <div class="cards-painel">
 
     <div class="card-metrica" onclick="abrirModalQA('0')">
