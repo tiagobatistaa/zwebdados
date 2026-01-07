@@ -38,54 +38,49 @@ window.onclick = function(event) {
 .modal-dev-secao-tit, .modal-qa-secao-tit {color:#44bafa;font-size:1.15em;margin:20px 0 9px 0;}
 
 /* Ajustes para primeiro quadro para evitar scroll */
-.quadro-wrapper {
-  width: 100%;
-  max-width: 100%;
-}
-
 .quadro-metricas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: nowrap;        /* Não quebra os cards */
+    justify-content: center;  /* Centraliza */
+    gap: 32px;
+    max-width: unset;         /* Remove limite se quiser ocupar a tela toda */
+    overflow-x: auto;         /* Permite barra caso realmente extrapole */
 }
-
 .painel {
-    width: fit-content;      /* Largura fixa para todos os cards */
-    height: fit-content;
-    padding: 1rem;
-    margin: 0 0.5rem;
+    width: 320px;      /* Largura fixa para todos os cards */
+    min-width: 280px;  /* Segurança, mas o width já segura */
+    max-width: 340px;
 }
 
-# @media (max-width: 1600px) {
-#     .quadro-metricas {
-#         max-width: 1350px;
-#         gap: 24px;
-#     }
-# }
+@media (max-width: 1600px) {
+    .quadro-metricas {
+        max-width: 1350px;
+        gap: 24px;
+    }
+}
 
-# @media (max-width: 1100px) {
-#     .quadro-metricas {
-#         max-width: 900px;
-#         gap: 16px;
-#     }
-#     .painel {
-#         max-width: 97vw;
-#         min-width: 170px;
-#     }
-# }
+@media (max-width: 1100px) {
+    .quadro-metricas {
+        max-width: 900px;
+        gap: 16px;
+    }
+    .painel {
+        max-width: 97vw;
+        min-width: 170px;
+    }
+}
 
-# @media (max-width: 700px) {
-#     .quadro-metricas {
-#         flex-direction: column;
-#         max-width: 99vw;
-#         gap: 12px;
-#     }
-#     .painel {
-#         max-width: 99vw;
-#         min-width: 120px;
-#     }
-# }
+@media (max-width: 700px) {
+    .quadro-metricas {
+        flex-direction: column;
+        max-width: 99vw;
+        gap: 12px;
+    }
+    .painel {
+        max-width: 99vw;
+        min-width: 120px;
+    }
+}
 
 
 body {
@@ -93,10 +88,6 @@ body {
   color: #e0e3e8;
   font-family: 'Roboto', Arial, sans-serif;
   margin: 0; min-height: 100vh;
-  width: 100vw;
-  height: 100vh;
-  transition: 100ms all ease-in;
-  overflow-x: hidden;
 }
 h2 {
   font-family: 'Fira Mono', monospace;
@@ -242,62 +233,60 @@ a:hover {
     width: 100%;
 }
 
-# @media (max-width: 700px) {
-#   .quadro-metricas {
-#     flex-wrap: wrap !important;      /* pode forçar com !important caso o navegador ignore */
-#     justify-content: center;         /* centraliza as linhas dobradas */
-#     gap: 10px;
-#   }
-#   .painel {
-#     flex: 1 1 96vw !important;       /* deixa cada card ocupar quase toda a largura do mobile */
-#     width: 96vw !important;
-#     max-width: 99vw !important;
-#     min-width: 0 !important;
-#   }
-#   .card-metrica {
-#     font-size: 0.93em;               /* deixa mais compacto no mobile */
-#     padding: 5px 2vw;
-#   }
-# }
+@media (max-width: 700px) {
+  .quadro-metricas {
+    flex-wrap: wrap !important;      /* pode forçar com !important caso o navegador ignore */
+    justify-content: center;         /* centraliza as linhas dobradas */
+    gap: 10px;
+  }
+  .painel {
+    flex: 1 1 96vw !important;       /* deixa cada card ocupar quase toda a largura do mobile */
+    width: 96vw !important;
+    max-width: 99vw !important;
+    min-width: 0 !important;
+  }
+  .card-metrica {
+    font-size: 0.93em;               /* deixa mais compacto no mobile */
+    padding: 5px 2vw;
+  }
+}
 </style>
 
-<h2 style="text-align: center;">Métricas do Time Web<br>(Novembro 2025)</h2>
-
-<div class="quadro-wrapper">
+<h2>Métricas do Time Web<br>(Dezembro 2025)</h2>
 <div class="quadro-metricas">
   <div class="painel">
     <div class="card-header">Cards Entregues</div>
     <div class="card-info-itens">
-      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">116</span></div>
-      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">37</span></div>
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">76</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">25</span></div>
     </div>
   </div>
   <div class="painel">
     <div class="card-header">Média de Entrega</div>
     <div class="card-info-itens">
-      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 3h 32m</span></div>
-      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 11h 42m</span></div>
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 4h 55m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 17h 36m</span></div>
     </div>
   </div>
   <div class="painel">
     <div class="card-header">T.Col Retorno</div>
     <div class="card-info-itens">
-      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 4h 12m</span></div>
-      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">1d 3h 4m</span></div>
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 9h 54m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">1d 1h 54m</span></div>
     </div>
   </div>
   <div class="painel">
     <div class="card-header">T.Col Pronto p/ Testar</div>
     <div class="card-info-itens">
-      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 16h 4m</span></div>
-      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">0d 11h 60m</span></div>
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">0d 5h 30m</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">1d 0h 29m</span></div>
     </div>
   </div>
   <div class="painel">
     <div class="card-header">Retornos Deploy</div>
     <div class="card-info-itens">
       <div class="info-item"><span class="info-tit">Sustentação:</span>
-        <span class="info-value">6.0% (7 cards)</span>
+        <span class="info-value">6.6% (5 cards)</span>
       </div>
       <div class="info-item"><span class="info-tit">Evolução:</span>
         <span class="info-value">0.0% (0 cards)</span>
@@ -307,14 +296,13 @@ a:hover {
   <div class="painel">
     <div class="card-header">Retornos de Review</div>
     <div class="card-info-itens">
-      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">22.4% (116 cards)</span></div>
-      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">35.1% (37 cards)</span></div>
+      <div class="info-item"><span class="info-tit">Sustentação:</span> <span class="info-value">18.4% (76 cards)</span></div>
+      <div class="info-item"><span class="info-tit">Evolução:</span> <span class="info-value">8.0% (25 cards)</span></div>
     </div>
   </div>
 </div>
-</div>
 
-<h2 style="text-align: center;">Relatório de Métricas dos Devs</h2>
+<h2>Relatório de Métricas dos Devs</h2>
 <div class="cards-painel">
 
     <div class="card-metrica" onclick="abrirModalDev('0')">
@@ -326,15 +314,15 @@ a:hover {
         <span class="nome-metrica">André Vieira</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">18</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">7</span></div>
         <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 3h 22m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 8h 3m</span></div>
         
 
-        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x R2: 1x</span></div>
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">6</span></div>
+        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x</span></div>
+        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">5</span></div>
         
-        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">2</span></div>
+        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">1</span></div>
         
       </div>
     </div>
@@ -350,7 +338,7 @@ a:hover {
             <th>Retornado</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5630' target='_blank'>WEB-5630</a></td><td>R1</td><td>0d 2h 40m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5511' target='_blank'>WEB-5511</a></td><td>R2</td><td>0d 6h 31m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5918' target='_blank'>WEB-5918</a></td><td>R1</td><td>0d 15h 31m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
         <table class="modal-dev-table">
           <tr>
             <th>Tipo de item</th>
@@ -358,7 +346,7 @@ a:hover {
             <th>Qnt. Ret. Review</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5759' target='_blank'>WEB-5759</a></td><td>1</td><td>0d 0h 3m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5757' target='_blank'>WEB-5757</a></td><td>1</td><td>0d 0h 31m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5621' target='_blank'>WEB-5621</a></td><td>1</td><td>0d 2h 20m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5506' target='_blank'>WEB-5506</a></td><td>1</td><td>0d 1h 51m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5459' target='_blank'>WEB-5459</a></td><td>2</td><td>0d 6h 19m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5950' target='_blank'>WEB-5950</a></td><td>1</td><td>0d 4h 28m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5925' target='_blank'>WEB-5925</a></td><td>3</td><td>0d 1h 49m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5918' target='_blank'>WEB-5918</a></td><td>1</td><td>0d 15h 31m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
         <table class="modal-dev-table">
           <tr>
             <th>Tipo de item</th>
@@ -367,8 +355,42 @@ a:hover {
             <th>Resp. Teste Card Vinculado</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5740' target='_blank'>WEB-5740</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5452' target='_blank'>WEB-5452</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 24m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5654' target='_blank'>WEB-5654</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5443' target='_blank'>WEB-5443</a></td><td>Gabriel Patzlaff Ribeiro</td><td>0d 0h 51m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5738' target='_blank'>WEB-5738</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5393' target='_blank'>WEB-5393</a></td><td>Mateus Júlio Rosiak</td><td>0d 19h 44m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
     <div class="card-metrica" onclick="abrirModalDev('1')">
+      <div class="card-header">
+        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">A</div>
+        <span class="nome-metrica">Angelina</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">2</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 5h 5m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">2d 10h 4m</span></div>
+
+        
+        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">2</span></div>
+        
+        
+        
+      </div>
+    </div>
+    <div id="modal-dev-1" class="modal-dev">
+      <div class="modal-dev-content">
+        <span class="modal-close" onclick="fecharModalDev('1')">&times;</span>
+        <h2>Métricas: Angelina</h2>
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Chave do item</th>
+            <th>Qnt. Ret. Review</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-373' target='_blank'>EWEB-373</a></td><td>2</td><td>2d 10h 4m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('2')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
@@ -377,21 +399,21 @@ a:hover {
         <span class="nome-metrica">Bruno Demartini</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">16</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">4</span></div>
         <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 4h 30m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 14h 40m</span></div>
         
 
-        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 3x</span></div>
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">8</span></div>
-        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">2</span></div>
-        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">3</span></div>
+        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x</span></div>
+        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">2</span></div>
+        
+        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">2</span></div>
         
       </div>
     </div>
-    <div id="modal-dev-1" class="modal-dev">
+    <div id="modal-dev-2" class="modal-dev">
       <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('1')">&times;</span>
+        <span class="modal-close" onclick="fecharModalDev('2')">&times;</span>
         <h2>Métricas: Bruno Demartini</h2>
     <div class="modal-dev-secao-tit">Retornos</div>
         <table class="modal-dev-table">
@@ -401,7 +423,7 @@ a:hover {
             <th>Retornado</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5631' target='_blank'>WEB-5631</a></td><td>R1</td><td>0d 3h 1m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5613' target='_blank'>WEB-5613</a></td><td>R1</td><td>0d 6h 54m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>R1</td><td>0d 9h 46m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5921' target='_blank'>WEB-5921</a></td><td>R1</td><td>1d 9h 57m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
         <table class="modal-dev-table">
           <tr>
             <th>Tipo de item</th>
@@ -409,15 +431,7 @@ a:hover {
             <th>Qnt. Ret. Review</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5613' target='_blank'>WEB-5613</a></td><td>1</td><td>0d 6h 54m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5552' target='_blank'>WEB-5552</a></td><td>3</td><td>0d 10h 45m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5526' target='_blank'>WEB-5526</a></td><td>1</td><td>0d 1h 34m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5492' target='_blank'>WEB-5492</a></td><td>2</td><td>0d 3h 39m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>1</td><td>0d 9h 46m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Resp. Teste Principal</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5508' target='_blank'>WEB-5508</a></td><td>Mateus Gasperini</td><td>0d 4h 56m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5492' target='_blank'>WEB-5492</a></td><td>Mateus Júlio Rosiak</td><td>0d 3h 39m</td></tr></table><div class="modal-dev-secao-tit">Problemas pós deploy</div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5921' target='_blank'>WEB-5921</a></td><td>1</td><td>1d 9h 57m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5744' target='_blank'>WEB-5744</a></td><td>1</td><td>0d 3h 15m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
         <table class="modal-dev-table">
           <tr>
             <th>Tipo de item</th>
@@ -426,8 +440,8 @@ a:hover {
             <th>Resp. Teste Card Vinculado</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5756' target='_blank'>WEB-5756</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 21m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5743' target='_blank'>WEB-5743</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 27m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5688' target='_blank'>WEB-5688</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 0m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('2')">
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-6067' target='_blank'>WEB-6067</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5921' target='_blank'>WEB-5921</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 1m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-6047' target='_blank'>WEB-6047</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 16m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('3')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
@@ -436,40 +450,24 @@ a:hover {
         <span class="nome-metrica">Felipe Hinkel</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">16</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 43m</span></div>
-        
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">6</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">8</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 0h 30m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 20h 53m</span></div>
 
-        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x</span></div>
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">2</span></div>
+        
+        
         
         
         
       </div>
     </div>
-    <div id="modal-dev-2" class="modal-dev">
+    <div id="modal-dev-3" class="modal-dev">
       <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('2')">&times;</span>
+        <span class="modal-close" onclick="fecharModalDev('3')">&times;</span>
         <h2>Métricas: Felipe Hinkel</h2>
-    <div class="modal-dev-secao-tit">Retornos</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Retornado</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5672' target='_blank'>WEB-5672</a></td><td>R1</td><td>0d 1h 11m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Qnt. Ret. Review</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5743' target='_blank'>WEB-5743</a></td><td>1</td><td>0d 0h 27m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5672' target='_blank'>WEB-5672</a></td><td>1</td><td>0d 1h 11m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('3')">
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('4')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
@@ -478,40 +476,24 @@ a:hover {
         <span class="nome-metrica">Filipe Golfe</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">9</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">10</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 4h 40m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 9h 3m</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">5</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 4h 5m</span></div>
+        
 
         
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">6</span></div>
-        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
+        
+        
         
         
       </div>
     </div>
-    <div id="modal-dev-3" class="modal-dev">
+    <div id="modal-dev-4" class="modal-dev">
       <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('3')">&times;</span>
+        <span class="modal-close" onclick="fecharModalDev('4')">&times;</span>
         <h2>Métricas: Filipe Golfe</h2>
-    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Qnt. Ret. Review</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5775' target='_blank'>WEB-5775</a></td><td>1</td><td>0d 5h 1m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5442' target='_blank'>WEB-5442</a></td><td>2</td><td>0d 14h 7m</td></tr><tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-322' target='_blank'>EWEB-322</a></td><td>1</td><td>3d 1h 47m</td></tr><tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-304' target='_blank'>EWEB-304</a></td><td>2</td><td>0d 7h 27m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Resp. Teste Principal</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5442' target='_blank'>WEB-5442</a></td><td>Bruno Henrique</td><td>0d 14h 7m</td></tr></table><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('4')">
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('5')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
@@ -520,64 +502,13 @@ a:hover {
         <span class="nome-metrica">Gabriel Patzlaff Ribeiro</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">13</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">6</span></div>
         <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 6h 50m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 5h 24m</span></div>
         
 
-        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x R2: 1x</span></div>
+        
         <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">5</span></div>
-        
-        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">1</span></div>
-        
-      </div>
-    </div>
-    <div id="modal-dev-4" class="modal-dev">
-      <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('4')">&times;</span>
-        <h2>Métricas: Gabriel Patzlaff Ribeiro</h2>
-    <div class="modal-dev-secao-tit">Retornos</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Retornado</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5657' target='_blank'>WEB-5657</a></td><td>R1</td><td>0d 11h 39m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5617' target='_blank'>WEB-5617</a></td><td>R2</td><td>0d 6h 12m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Qnt. Ret. Review</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5623' target='_blank'>WEB-5623</a></td><td>2</td><td>0d 17h 4m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5543' target='_blank'>WEB-5543</a></td><td>2</td><td>0d 12h 12m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5503' target='_blank'>WEB-5503</a></td><td>1</td><td>0d 12h 32m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Card. Correção</th>
-            <th>ID do card vinculado</th>
-            <th>Resp. Teste Card Vinculado</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5795' target='_blank'>WEB-5795</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5657' target='_blank'>WEB-5657</a></td><td>Mateus Júlio Rosiak</td><td>0d 0h 3m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('5')">
-      <div class="card-header">
-        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
-      </div>
-      <div class="card-avatar-nome">
-        <div class="avatar-fake">GD</div>
-        <span class="nome-metrica">Giovanni Dal Bello</span>
-      </div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">23</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">2</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 0h 40m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 3h 10m</span></div>
-
-        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 2x</span></div>
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">1</span></div>
         
         <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">1</span></div>
         
@@ -586,84 +517,7 @@ a:hover {
     <div id="modal-dev-5" class="modal-dev">
       <div class="modal-dev-content">
         <span class="modal-close" onclick="fecharModalDev('5')">&times;</span>
-        <h2>Métricas: Giovanni Dal Bello</h2>
-    <div class="modal-dev-secao-tit">Retornos</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Retornado</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5686' target='_blank'>WEB-5686</a></td><td>R1</td><td>0d 0h 29m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5636' target='_blank'>WEB-5636</a></td><td>R1</td><td>0d 3h 42m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Chave do item</th>
-            <th>Qnt. Ret. Review</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5674' target='_blank'>WEB-5674</a></td><td>1</td><td>0d 0h 27m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
-        <table class="modal-dev-table">
-          <tr>
-            <th>Tipo de item</th>
-            <th>Card. Correção</th>
-            <th>ID do card vinculado</th>
-            <th>Resp. Teste Card Vinculado</th>
-            <th>Tempo desenvolvimento</th>
-          </tr>
-        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5625' target='_blank'>WEB-5625</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5332' target='_blank'>WEB-5332</a></td><td>Leonardo Piva</td><td>0d 1h 42m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('6')">
-      <div class="card-header">
-        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
-      </div>
-      <div class="card-avatar-nome">
-        <div class="avatar-fake">GL</div>
-        <span class="nome-metrica">Gustavo Lidani</span>
-      </div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">2</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">6</span></div>
-        
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 13h 25m</span></div>
-
-        
-        
-        
-        
-        
-      </div>
-    </div>
-    <div id="modal-dev-6" class="modal-dev">
-      <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('6')">&times;</span>
-        <h2>Métricas: Gustavo Lidani</h2>
-    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalDev('7')">
-      <div class="card-header">
-        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
-      </div>
-      <div class="card-avatar-nome">
-        <div class="avatar-fake">GM</div>
-        <span class="nome-metrica">Gustavo Mews</span>
-      </div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">7</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">9</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 6h 10m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 12h 20m</span></div>
-
-        
-        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">11</span></div>
-        
-        
-        <div class="info-item"><span class="info-icon">🤖</span><span class="info-tit">GP:</span><span class="info-value">1</span></div>
-      </div>
-    </div>
-    <div id="modal-dev-7" class="modal-dev">
-      <div class="modal-dev-content">
-        <span class="modal-close" onclick="fecharModalDev('7')">&times;</span>
-        <h2>Métricas: Gustavo Mews</h2>
+        <h2>Métricas: Gabriel Patzlaff Ribeiro</h2>
     <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div>
         <table class="modal-dev-table">
           <tr>
@@ -672,29 +526,116 @@ a:hover {
             <th>Qnt. Ret. Review</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-353' target='_blank'>EWEB-353</a></td><td>4</td><td>0d 3h 44m</td></tr><tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-351' target='_blank'>EWEB-351</a></td><td>1</td><td>0d 6h 23m</td></tr><tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-346' target='_blank'>EWEB-346</a></td><td>5</td><td>2d 3h 6m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-4933' target='_blank'>WEB-4933</a></td><td>1</td><td>0d 19h 37m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5808' target='_blank'>WEB-5808</a></td><td>2</td><td>0d 8h 25m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5807' target='_blank'>WEB-5807</a></td><td>1</td><td>0d 2h 16m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5738' target='_blank'>WEB-5738</a></td><td>2</td><td>0d 19h 44m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Card. Correção</th>
+            <th>ID do card vinculado</th>
+            <th>Resp. Teste Card Vinculado</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5968' target='_blank'>WEB-5968</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5462' target='_blank'>WEB-5462</a></td><td>Leonardo Piva</td><td>0d 0h 44m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('6')">
+      <div class="card-header">
+        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">GD</div>
+        <span class="nome-metrica">Giovanni Dal Bello</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">41</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 3h 52m</span></div>
+        
+
+        
+        <div class="info-item"><span class="info-icon">👁️</span><span class="info-tit">Ret. Review:</span><span class="info-value">2</span></div>
+        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">1</span></div>
+        
+      </div>
+    </div>
+    <div id="modal-dev-6" class="modal-dev">
+      <div class="modal-dev-content">
+        <span class="modal-close" onclick="fecharModalDev('6')">&times;</span>
+        <h2>Métricas: Giovanni Dal Bello</h2>
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div>
         <table class="modal-dev-table">
           <tr>
             <th>Tipo de item</th>
             <th>Chave do item</th>
+            <th>Qnt. Ret. Review</th>
             <th>Tempo desenvolvimento</th>
           </tr>
-        <tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-346' target='_blank'>EWEB-346</a></td><td>2d 3h 6m</td></tr></table></div></div>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5933' target='_blank'>WEB-5933</a></td><td>1</td><td>0d 5h 10m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5786' target='_blank'>WEB-5786</a></td><td>1</td><td>0d 0h 16m</td></tr></table><div class="modal-dev-secao-tit">Problemas pré deploy</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Chave do item</th>
+            <th>Resp. Teste Principal</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5792' target='_blank'>WEB-5792</a></td><td>Leonardo Piva</td><td>1d 7h 1m</td></tr></table><div class="modal-dev-secao-tit">Problemas pós deploy</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Card. Correção</th>
+            <th>ID do card vinculado</th>
+            <th>Resp. Teste Card Vinculado</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5949' target='_blank'>WEB-5949</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5792' target='_blank'>WEB-5792</a></td><td>Leonardo Piva</td><td>0d 1h 42m</td></tr></table><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('7')">
+      <div class="card-header">
+        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">GL</div>
+        <span class="nome-metrica">Gustavo Lidani</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">0</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">3</span></div>
+        
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 12h 33m</span></div>
+
+        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x</span></div>
+        
+        
+        
+        
+      </div>
+    </div>
+    <div id="modal-dev-7" class="modal-dev">
+      <div class="modal-dev-content">
+        <span class="modal-close" onclick="fecharModalDev('7')">&times;</span>
+        <h2>Métricas: Gustavo Lidani</h2>
+    <div class="modal-dev-secao-tit">Retornos</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Chave do item</th>
+            <th>Retornado</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-349' target='_blank'>EWEB-349</a></td><td>R1</td><td>0d 17h 46m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
     <div class="card-metrica" onclick="abrirModalDev('8')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
       <div class="card-avatar-nome">
-        <div class="avatar-fake">IG</div>
-        <span class="nome-metrica">Ian Grasman</span>
+        <div class="avatar-fake">GM</div>
+        <span class="nome-metrica">Gustavo Mews</span>
       </div>
       <div class="card-info-itens">
         <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">1</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 0h 1m</span></div>
-        
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">2</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 0h 25m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 9h 14m</span></div>
 
-        
+        <div class="info-item"><span class="info-icon">🔄</span><span class="info-tit">Retornos:</span><span class="info-value">R1: 1x</span></div>
         
         
         
@@ -704,21 +645,29 @@ a:hover {
     <div id="modal-dev-8" class="modal-dev">
       <div class="modal-dev-content">
         <span class="modal-close" onclick="fecharModalDev('8')">&times;</span>
-        <h2>Métricas: Ian Grasman</h2>
-    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+        <h2>Métricas: Gustavo Mews</h2>
+    <div class="modal-dev-secao-tit">Retornos</div>
+        <table class="modal-dev-table">
+          <tr>
+            <th>Tipo de item</th>
+            <th>Chave do item</th>
+            <th>Retornado</th>
+            <th>Tempo desenvolvimento</th>
+          </tr>
+        <tr><td>Implementações</td><td><a href='https://zucchettibr.atlassian.net/browse/EWEB-470' target='_blank'>EWEB-470</a></td><td>R1</td><td>0d 1h 53m</td></tr></table><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
     <div class="card-metrica" onclick="abrirModalDev('9')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
       <div class="card-avatar-nome">
-        <div class="avatar-fake">JK</div>
-        <span class="nome-metrica">Jonathan kunz</span>
+        <div class="avatar-fake">IG</div>
+        <span class="nome-metrica">Ian Grasman</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">1</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">7</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 39m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 17h 10m</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">0</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">1</span></div>
+        
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 0h 9m</span></div>
 
         
         
@@ -730,21 +679,21 @@ a:hover {
     <div id="modal-dev-9" class="modal-dev">
       <div class="modal-dev-content">
         <span class="modal-close" onclick="fecharModalDev('9')">&times;</span>
-        <h2>Métricas: Jonathan kunz</h2>
+        <h2>Métricas: Ian Grasman</h2>
     <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
     <div class="card-metrica" onclick="abrirModalDev('10')">
       <div class="card-header">
         <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
       </div>
       <div class="card-avatar-nome">
-        <div class="avatar-fake">KT</div>
-        <span class="nome-metrica">Kaue Thums</span>
+        <div class="avatar-fake">JK</div>
+        <span class="nome-metrica">Jonathan kunz</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">10</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">3</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 5h 55m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 8h 12m</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">0</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">7</span></div>
+        
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 7h 57m</span></div>
 
         
         
@@ -756,9 +705,61 @@ a:hover {
     <div id="modal-dev-10" class="modal-dev">
       <div class="modal-dev-content">
         <span class="modal-close" onclick="fecharModalDev('10')">&times;</span>
+        <h2>Métricas: Jonathan kunz</h2>
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('11')">
+      <div class="card-header">
+        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">KT</div>
+        <span class="nome-metrica">Kaue Thums</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">3</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">3</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 11h 18m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">1d 10h 18m</span></div>
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+    <div id="modal-dev-11" class="modal-dev">
+      <div class="modal-dev-content">
+        <span class="modal-close" onclick="fecharModalDev('11')">&times;</span>
         <h2>Métricas: Kaue Thums</h2>
+    <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div>
+    <div class="card-metrica" onclick="abrirModalDev('12')">
+      <div class="card-header">
+        <span>&lt;Dev&gt;</span><span>&lt;/dev&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">MP</div>
+        <span class="nome-metrica">Maiquel Parisotto</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">0</span></div>
+        
+        
+
+        
+        
+        
+        
+        
+      </div>
+    </div>
+    <div id="modal-dev-12" class="modal-dev">
+      <div class="modal-dev-content">
+        <span class="modal-close" onclick="fecharModalDev('12')">&times;</span>
+        <h2>Métricas: Maiquel Parisotto</h2>
     <div class="modal-dev-secao-tit">Retornos</div><div>Nenhum retorno encontrado.</div><div class="modal-dev-secao-tit">Retornos de review</div><div>Nenhum retorno de review encontrado.</div><div class="modal-dev-secao-tit">Problemas pré deploy</div><div>Nenhum problema interno encontrado.</div><div class="modal-dev-secao-tit">Problemas pós deploy</div><div>Nenhum retorno de deploy encontrado.</div><div class="modal-dev-secao-tit">GP: Cards com uso de IA</div><div>Nenhum card com uso de IA encontrado.</div></div></div></div>
-<h2 style="text-align: center;">Relatório de Métricas dos QAs</h2>
+<h2>Relatório de Métricas dos QAs</h2>
 <div class="cards-painel">
 
     <div class="card-metrica" onclick="abrirModalQA('0')">
@@ -767,24 +768,24 @@ a:hover {
         <span>&lt;/QA&gt;</span>
       </div>
       <div class="card-avatar-nome">
-        <div class="avatar-fake">BH</div>
-        <span class="nome-metrica">Bruno Henrique</span>
+        <div class="avatar-fake">AS</div>
+        <span class="nome-metrica">Andréia Schienemayer</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">11</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">9</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 54m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 5h 4m</span></div>
-        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">1</span></div>
+        
+        
+        
+        
         
       </div>
     </div>
     <div id="modal-qa-0" class="modal-qa">
       <div class="modal-qa-content">
         <span class="modal-close" onclick="fecharModalQA('0')">&times;</span>
-        <h2>Métricas: Bruno Henrique</h2>
+        <h2>Métricas: Andréia Schienemayer</h2>
         <div class="modal-qa-secao-tit">Prob. PréDeploy</div>
-    <table class="modal-qa-table"><tr><th>Tipo de item</th><th>Chave do item</th><th>Responsável (dev)</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5442' target='_blank'>WEB-5442</a></td><td>Filipe Golfe</td><td>0d 6h 47m</td></tr></table><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><div>Nenhum retorno de deploy encontrado.</div></div></div>
+    <div>Nenhum problema causado encontrado.</div><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><div>Nenhum retorno de deploy encontrado.</div></div></div>
     <div class="card-metrica" onclick="abrirModalQA('1')">
       <div class="card-header">
         <span>&lt;QA&gt;</span>
@@ -795,12 +796,12 @@ a:hover {
         <span class="nome-metrica">Leonardo Piva</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">17</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">1</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 2h 13m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 0h 58m</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">19</span></div>
         
-        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 0h 38m</span></div>
+        
+        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">2</span></div>
       </div>
     </div>
     <div id="modal-qa-1" class="modal-qa">
@@ -808,32 +809,8 @@ a:hover {
         <span class="modal-close" onclick="fecharModalQA('1')">&times;</span>
         <h2>Métricas: Leonardo Piva</h2>
         <div class="modal-qa-secao-tit">Prob. PréDeploy</div>
-    <div>Nenhum problema causado encontrado.</div><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><table class="modal-qa-table"><tr><th>Tipo de item</th><th>Card. Correção</th><th>Card de origem</th><th>Resp. Card Vinculado</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5625' target='_blank'>WEB-5625</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5332' target='_blank'>WEB-5332</a></td><td>Giovanni Dal Bello</td><td>0d 1h 33m</td></tr></table></div></div>
+    <table class="modal-qa-table"><tr><th>Tipo de item</th><th>Chave do item</th><th>Responsável (dev)</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5792' target='_blank'>WEB-5792</a></td><td>Giovanni Dal Bello</td><td>0d 0h 17m</td></tr></table><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><table class="modal-qa-table"><tr><th>Tipo de item</th><th>Card. Correção</th><th>Card de origem</th><th>Resp. Card Vinculado</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5968' target='_blank'>WEB-5968</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5462' target='_blank'>WEB-5462</a></td><td>Gabriel Patzlaff Ribeiro</td><td>0d 0h 39m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5949' target='_blank'>WEB-5949</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5792' target='_blank'>WEB-5792</a></td><td>Giovanni Dal Bello</td><td>0d 0h 7m</td></tr></table></div></div>
     <div class="card-metrica" onclick="abrirModalQA('2')">
-      <div class="card-header">
-        <span>&lt;QA&gt;</span>
-        <span>&lt;/QA&gt;</span>
-      </div>
-      <div class="card-avatar-nome">
-        <div class="avatar-fake">MG</div>
-        <span class="nome-metrica">Mateus Gasperini</span>
-      </div>
-      <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">41</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">3</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 21m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 3h 43m</span></div>
-        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
-        
-      </div>
-    </div>
-    <div id="modal-qa-2" class="modal-qa">
-      <div class="modal-qa-content">
-        <span class="modal-close" onclick="fecharModalQA('2')">&times;</span>
-        <h2>Métricas: Mateus Gasperini</h2>
-        <div class="modal-qa-secao-tit">Prob. PréDeploy</div>
-    <table class="modal-qa-table"><tr><th>Tipo de item</th><th>Chave do item</th><th>Responsável (dev)</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5508' target='_blank'>WEB-5508</a></td><td>Bruno Demartini</td><td>0d 2h 47m</td></tr></table><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><div>Nenhum retorno de deploy encontrado.</div></div></div>
-    <div class="card-metrica" onclick="abrirModalQA('3')">
       <div class="card-header">
         <span>&lt;QA&gt;</span>
         <span>&lt;/QA&gt;</span>
@@ -843,17 +820,41 @@ a:hover {
         <span class="nome-metrica">Mateus Júlio Rosiak</span>
       </div>
       <div class="card-info-itens">
-        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">39</span></div>
-        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">3</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 2h 24m</span></div>
-        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 2h 15m</span></div>
-        <div class="info-item"><span class="info-icon">⚠️</span><span class="info-tit">Prob. PréDeploy:</span><span class="info-value">1</span></div>
-        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">5</span></div>
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">44</span></div>
+        <div class="info-item"><span class="info-icon">🔵</span><span class="info-tit">Cards evo:</span><span class="info-value">1</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 41m</span></div>
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio evo:</span><span class="info-value">0d 1h 12m</span></div>
+        
+        <div class="info-item"><span class="info-icon">📦</span><span class="info-tit">Prob. PósDeploy:</span><span class="info-value">3</span></div>
+      </div>
+    </div>
+    <div id="modal-qa-2" class="modal-qa">
+      <div class="modal-qa-content">
+        <span class="modal-close" onclick="fecharModalQA('2')">&times;</span>
+        <h2>Métricas: Mateus Júlio Rosiak</h2>
+        <div class="modal-qa-secao-tit">Prob. PréDeploy</div>
+    <div>Nenhum problema causado encontrado.</div><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><table class="modal-qa-table"><tr><th>Tipo de item</th><th>Card. Correção</th><th>Card de origem</th><th>Resp. Card Vinculado</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-6067' target='_blank'>WEB-6067</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5921' target='_blank'>WEB-5921</a></td><td>Bruno Demartini</td><td>0d 0h 14m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-6047' target='_blank'>WEB-6047</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Bruno Demartini</td><td>0d 0h 2m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5738' target='_blank'>WEB-5738</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5393' target='_blank'>WEB-5393</a></td><td>André Vieira</td><td>0d 0h 28m</td></tr></table></div></div>
+    <div class="card-metrica" onclick="abrirModalQA('3')">
+      <div class="card-header">
+        <span>&lt;QA&gt;</span>
+        <span>&lt;/QA&gt;</span>
+      </div>
+      <div class="card-avatar-nome">
+        <div class="avatar-fake">RD</div>
+        <span class="nome-metrica">Rosana da Silva</span>
+      </div>
+      <div class="card-info-itens">
+        <div class="info-item"><span class="info-icon">🟢</span><span class="info-tit">Cards sust:</span><span class="info-value">2</span></div>
+        
+        <div class="info-item"><span class="info-icon">⏱️</span><span class="info-tit">Tempo médio sust:</span><span class="info-value">0d 1h 29m</span></div>
+        
+        
+        
       </div>
     </div>
     <div id="modal-qa-3" class="modal-qa">
       <div class="modal-qa-content">
         <span class="modal-close" onclick="fecharModalQA('3')">&times;</span>
-        <h2>Métricas: Mateus Júlio Rosiak</h2>
+        <h2>Métricas: Rosana da Silva</h2>
         <div class="modal-qa-secao-tit">Prob. PréDeploy</div>
-    <table class="modal-qa-table"><tr><th>Tipo de item</th><th>Chave do item</th><th>Responsável (dev)</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5492' target='_blank'>WEB-5492</a></td><td>Bruno Demartini</td><td>0d 1h 29m</td></tr></table><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><table class="modal-qa-table"><tr><th>Tipo de item</th><th>Card. Correção</th><th>Card de origem</th><th>Resp. Card Vinculado</th><th>Tempo de teste</th></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5795' target='_blank'>WEB-5795</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5657' target='_blank'>WEB-5657</a></td><td>Gabriel Patzlaff Ribeiro</td><td>0d 0h 13m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5756' target='_blank'>WEB-5756</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Bruno Demartini</td><td>0d 0h 0m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5743' target='_blank'>WEB-5743</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Bruno Demartini</td><td>0d 0h 22m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5740' target='_blank'>WEB-5740</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5452' target='_blank'>WEB-5452</a></td><td>André Vieira</td><td>0d 1h 26m</td></tr><tr><td>Ajustes</td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5688' target='_blank'>WEB-5688</a></td><td><a href='https://zucchettibr.atlassian.net/browse/WEB-5461' target='_blank'>WEB-5461</a></td><td>Bruno Demartini</td><td>0d 0h 0m</td></tr></table></div></div></div>
+    <div>Nenhum problema causado encontrado.</div><div class="modal-qa-secao-tit">Retorno Pós Deploy</div><div>Nenhum retorno de deploy encontrado.</div></div></div></div>
